@@ -1,8 +1,4 @@
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/wpa/service-worker.js')
-    .then(reg => console.log("SW registered!", reg))
-    .catch(err => console.error("SW registration failed:", err));
-}
+
 // 1. Notification permission
 if ("Notification" in window && Notification.permission !== "granted") {
   Notification.requestPermission();
