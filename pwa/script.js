@@ -192,14 +192,13 @@ function checkTasksForNotifications() {
                 icon: "icons/icon-192.png"
               });
             }
-            task.notified[interval.ms] = true;
+            task.notified[interval.ms] = true;  
+            saveToStorage();
           }
         }
       }
     }
   }
-
-  saveToStorage();
 }
 setInterval(checkTasksForNotifications, 60000); 
 
