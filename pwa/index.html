@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Classmate</title>
+  <link rel="icon" href="icons/icon-192.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet"></head>
+  <body>
+
+    <div id="splash-screen">
+    <div class="splash-container">
+      <img src="./icons/icon-512.png" alt="Logo" class="logo" />
+      <div class="app-name">Clasmate</div>
+    </div>
+  </div>
+
+<div id="sidebar" class="sidebar">
+    <h3>تنظیمات</h3>
+    <button id="themeToggle" class="sidebar-btn"><img src="./pictures/dark-mode-solid-svgrepo-com.svg" alt="" style="height: 30px; width: auto;"></button>
+    <button id="clearAll" class="sidebar-btn">پاک کردن همه‌ی داده‌ها</button>
+    <button id="closeSidebar" class="sidebar-close"><img src="./pictures/close-circle-svgrepo-com.svg" alt="" style="height: 30px; width: auto;"></button>
+  </div>
+
+
+  <header class="header">
+    <button id="openSidebar" class="settings-btn"><img src="./pictures/menu-dots-circle-svgrepo-com.svg" alt="" style="height: 30px; width: auto;"></button>
+    <div class="nav-top">
+      <button id="nextDay" class="nav-btn"><img src="./pictures/next-svgrepo-com.svg" alt="" style="height: 25px; width: auto;"></button>
+      <span id="currentWeekday" class="day-label">شنبه</span>
+      <button id="prevDay" class="nav-btn"><img src="./pictures/next-svgrepo-com (1).svg" alt="" style="height: 25px; width: auto;"></button>
+      <button id="datePickerBtn" class="nav-btn"></button>
+      <input id="datePicker" type="date" class="hidden" />
+    </div>
+    <div class="currentdaycontainer"><span id="currentDay" class="day-label">۱۴۰۲/۰۱/۰۱</span></div>
+            
+
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main-content">
+    <div id="classList" class="class-list"><!-- کارت‌ها --></div>
+  </main>
+
+  <!-- Floating Add -->
+  <button id="addClassBtn" class="floating-add-btn"><img src="./pictures/add.svg" alt="" style="height: 40px; width: auto; text-align: center;"></button>
+
+  <!-- Modal افزودن/ویرایش کلاس -->
+  <div id="addClassModal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="addClassTitle">افزودن کلاس جدید</h3>
+      <input id="inputClassName" type="text" placeholder="نام کلاس" />
+      <input id="inputTeacher" type="text" placeholder="نام استاد" />
+      <input id="inputTime" type="time" placeholder="ساعت کلاس" />
+      <input id="inputLocation" type="text" placeholder="محل برگزاری" />
+      <div class="modal-actions">
+        <button id="saveClass">ذخیره</button>
+        <button id="closeAddClassModal">بستن</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal جزییات کلاس -->
+  <div id="classDetailModal" class="modal hidden">
+    <div class="modal-content detail-grid">
+      <div class="detail-header">
+        <h3 id="detailClassName">جزئیات کلاس</h3>
+        <button id="closeDetailModal" class="close-detail"><img src="./pictures/close-circle-svgrepo-com.svg" alt="" style="height: 20px; width: auto;"></button>
+      </div>
+      <div class="detail-panels">
+        <!-- پنل فایل‌ها -->
+        <section class="panel files-panel">
+          <h4>فایل‌ها</h4>
+          <input id="fileInput" type="file" />
+          <ul id="fileList"></ul>
+        </section>
+        <!-- پنل تسک‌ها -->
+        <section class="panel tasks-panel">
+          <h4>تسک‌ها</h4>
+          <ul id="detailTaskList"></ul>
+          <div class="task-add">
+            <input id="detailTaskInput" type="text" placeholder="تسک جدید..." />
+            <input id="detailTaskDate" type="datetime-local" />
+            <button id="saveDetailTask"><img src="./pictures/add.svg" alt="" style="height: 20px; width: auto; text-align: center;"></button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/service-worker.js");
+    }
+  </script>
+</body>
+</html>

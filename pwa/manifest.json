@@ -1,0 +1,23 @@
+{
+  "name": "classmate",
+  "short_name": "classmate",
+  "description": "مدیریت روزانه کلاس‌ها و یادآوری تسک‌ها",
+  "lang": "fa-IR",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#6200ea",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
