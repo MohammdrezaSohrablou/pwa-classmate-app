@@ -54,6 +54,7 @@ const detailTaskInput = document.getElementById("detailTaskInput");
 const detailTaskDate = document.getElementById("detailTaskDate");
 const saveDetailTask = document.getElementById("saveDetailTask");
 const closeDetailModal = document.getElementById("closeDetailModal");
+const currentDayEl = document.getElementById("currentWeekday");
 
 
 // 4. function
