@@ -1,8 +1,8 @@
 
 // 1. Notification permission
-if ("Notification" in window && "serviceWorker" in navigator) {
-  Notification.requestPermission().then(permission => {
-    if (permission === "granted") {new Notification("Hello from Class Manager!");}});}
+if ("Notification" in window && Notification.permission !== "granted") {
+  Notification.requestPermission();
+}
 
 const today = new Date();
 const fixedDate = today.toLocaleDateString("fa-IR"); // تاریخ ثابت (امروز)
